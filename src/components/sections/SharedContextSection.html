@@ -1,0 +1,64 @@
+<section class="slide inner" id="shared-context">
+    <div class="shared-context-layout">
+      <div class="shared-context-copy">
+        <div class="eyebrow">Ontology - Shared Agent Context</div>
+        <h2>One Business Context. Every Agent.</h2>
+        <p class="lead">
+          Knowledge Fabric turns business language into shared context for ItemGPT’s Specialized Agents.
+          Agents built by different teams can work around the same business objects, definitions and data.
+        </p>
+      </div>
+
+      <div class="shared-context-visual image-proof" aria-label="Unified Context showing multiple Agents working from shared governed business objects">
+        <img class="shared-context-shot-img" src="assets/knowledge-fabric/shared-agent-context.png" alt="Unified Context diagram connecting Procurement, Logistics and Warehouse Agents through shared business objects" />
+        <div class="context-map" aria-hidden="true">
+          <div class="ontology-core">
+            <div class="ontology-core-head">
+              <div class="ontology-core-title"><span class="ontology-core-icon">◎</span><div><div class="ontology-label">SHARED ONTOLOGY</div><small>One governed definition for every business object</small></div></div>
+              <small>Shared semantics · metrics · data lineage</small>
+            </div>
+            <div class="ontology-objects">
+              <span class="supplier">Supplier</span>
+              <span class="material">Material</span>
+              <span class="purchase-order">Purchase Order</span>
+              <span class="shipment">Shipment</span>
+              <span class="receipt">Receipt</span>
+              <span class="inventory">Inventory</span>
+            </div>
+          </div>
+
+          <svg class="context-connectors" viewBox="0 0 1200 205" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M600 0 V72 H198 V205"></path>
+            <path d="M600 72 V205"></path>
+            <path d="M600 72 H1002 V205"></path>
+            <circle cx="600" cy="72" r="4"></circle>
+            <circle cx="198" cy="205" r="4"></circle>
+            <circle cx="600" cy="205" r="4"></circle>
+            <circle cx="1002" cy="205" r="4"></circle>
+          </svg>
+          <div class="context-connection-label">The same governed objects flow into every Agent</div>
+
+          <div class="context-agent-grid">
+            <div class="context-agent-card procurement">
+              <div class="context-agent-head"><span class="context-agent-icon">◇</span><div><strong>Procurement Agent</strong><small>Built by Procurement</small></div></div>
+              <div class="agent-object-row"><span class="object-ref supplier">Supplier</span><span class="object-ref purchase-order">Purchase Order</span></div>
+              <p>Open orders · Supplier commitments</p>
+            </div>
+
+            <div class="context-agent-card supply">
+              <div class="context-agent-head"><span class="context-agent-icon">⇄</span><div><strong>Supply Chain Agent</strong><small>Built by Supply Chain</small></div></div>
+              <div class="agent-object-row"><span class="object-ref purchase-order">Purchase Order</span><span class="object-ref shipment">Shipment</span></div>
+              <p>Delivery status · ETA</p>
+            </div>
+
+            <div class="context-agent-card warehouse">
+              <div class="context-agent-head"><span class="context-agent-icon">▦</span><div><strong>Warehouse Agent</strong><small>Built by Warehouse Operations</small></div></div>
+              <div class="agent-object-row"><span class="object-ref shipment">Shipment</span><span class="object-ref receipt">Receipt</span><span class="object-ref inventory">Inventory</span></div>
+              <p>Actual receipt · Reconciliation</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>

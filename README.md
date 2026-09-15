@@ -1,15 +1,32 @@
 # ITEM Presentation
 
-Static presentation site for ITEM's enterprise AI solutions.
+Componentized presentation site for ITEM's enterprise AI solutions. The visual
+markup remains plain HTML, assembled by Vite from one file per presentation
+section.
+
+## Structure
+
+| Path | Responsibility |
+| --- | --- |
+| `src/App.js` | Page composition and section order |
+| `src/components/SiteHeader.html` | Global presentation header |
+| `src/components/sections/` | One HTML component per slide/section |
+| `src/styles/index.css` | Presentation styles and responsive rules |
+| `src/i18n/dictionaries.js` | Chinese and Japanese translation dictionaries |
+| `src/presentation.js` | Theme, language, training tabs and slide navigation |
+| `src/main.js` | Application bootstrap |
 
 ## Local preview
 
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Open <http://localhost:8000/ItemAISolutions.html>.
+Open <http://localhost:3000/>. The presentation is served exclusively through
+`index.html`.
 
 ## Deployment
 
-Every push to `main` deploys the presentation to GitHub Pages. The workflow publishes `ItemAISolutions.html` as the site's root `index.html` and includes everything under `assets/`.
+Every push to `main` builds the Vite application and deploys `dist/` to GitHub
+Pages.
