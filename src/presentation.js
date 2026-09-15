@@ -126,20 +126,6 @@ export function initializePresentation(){
       openArchitectureTab(architectureTabs[next].dataset.architectureTab);
     });
   });
-  const architectureVideo=document.querySelector('.architecture-video');
-  architectureVideo?.addEventListener('click',()=>{
-    const videoId=architectureVideo.dataset.youtubeId;
-    if(!videoId) return;
-    const title=architectureVideo.querySelector('strong')?.textContent||'Multi-agent collaboration in action';
-    const frame=document.createElement('iframe');
-    frame.className='architecture-video';
-    frame.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(videoId)+'?autoplay=1&rel=0&modestbranding=1';
-    frame.title=title;
-    frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    frame.allowFullscreen=true;
-    architectureVideo.replaceWith(frame);
-  });
-
   const ontologyTabs=[...document.querySelectorAll('.ontology-gallery-tab')];
   const ontologyPanels=[...document.querySelectorAll('.ontology-gallery-panel')];
   const openOntologyShot=(shotName)=>{
