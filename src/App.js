@@ -8,6 +8,8 @@ import sharedContextSection from "./components/sections/SharedContextSection.htm
 import marketplaceSection from "./components/sections/MarketplaceSection.html?raw";
 import factorySection from "./components/sections/FactorySection.html?raw";
 import itemGptSection from "./components/sections/ItemGptSection.html?raw";
+import wmsShipOrderVideoSection from "./components/sections/WmsShipOrderVideoSection.html?raw";
+import fmsTicketResponseVideoSection from "./components/sections/FmsTicketResponseVideoSection.html?raw";
 import itemGptAdminSection from "./components/sections/ItemGptAdminSection.html?raw";
 import trainingCatalogSection from "./components/sections/TrainingCatalogSection.html?raw";
 import audienceTrainingSection from "./components/sections/AudienceTrainingSection.html?raw";
@@ -25,6 +27,8 @@ const sections = [
   marketplaceSection,
   factorySection,
   itemGptSection,
+  wmsShipOrderVideoSection,
+  fmsTicketResponseVideoSection,
   itemGptAdminSection,
   trainingCatalogSection,
   audienceTrainingSection,
