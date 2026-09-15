@@ -178,20 +178,6 @@ export function initializePresentation(){
   ontologyLightbox?.addEventListener('click',event=>{
     if(event.target===ontologyLightbox) ontologyLightbox.close();
   });
-  const ontologyVideo=document.querySelector('.ontology-video');
-  ontologyVideo?.addEventListener('click',()=>{
-    const videoId=ontologyVideo.dataset.youtubeId;
-    if(!videoId) return;
-    const title=ontologyVideo.querySelector('strong')?.textContent||'Ontology drives Agent Factory';
-    const frame=document.createElement('iframe');
-    frame.className='ontology-video';
-    frame.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(videoId)+'?autoplay=1&rel=0&modestbranding=1';
-    frame.title=title;
-    frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    frame.allowFullscreen=true;
-    ontologyVideo.replaceWith(frame);
-  });
-
   const trainingTabs=[...document.querySelectorAll('.training-module-card')];
   const trainingPanels=[...document.querySelectorAll('.training-module-panel')];
   const openTrainingModule=(module)=>{

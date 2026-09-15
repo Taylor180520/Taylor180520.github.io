@@ -201,10 +201,7 @@ Object.assign(translations.zh, {
   "Openness & governance": "开放与治理",
   "IAM/OAuth, platform RBAC, ontology and workspace permissions, open tokens, MCP and A2A, audit and token-usage views, multi-tenancy.": "IAM/OAuth、平台 RBAC、本体与工作区权限、开放 token、MCP 与 A2A、审计与 Token 使用视图、多租户。",
   "Local modelling & backup": "本地建模与备份",
-  "ontology-builder-native lets consultants model in their own AI tools and sync to Studio; ontology-job provides scheduled logical backups and command-line restore.": "ontology-builder-native 让实施顾问在自己的 AI 工具里建模并同步到 Studio；ontology-job 提供定时逻辑备份与命令行恢复。",
-  "Ontology drives Agent Factory": "Ontology 驱动 Agent Factory",
-  "How the ontology becomes the foundation for rapid agent assembly — turning domain knowledge into deployable AI agents at scale.": "展示 Ontology 如何作为快速 Agent 组装的基础——将领域知识规模化转化为可部署的 AI Agent。",
-  "The ontology is the bridge from general intelligence to professional intelligence. Without it, a large model is a clever but ignorant outsider.": "Ontology 是让 AI 从通用智能走向专业智能的桥梁。没有它，大模型只是一个聪明但无知的外来者。"
+  "ontology-builder-native lets consultants model in their own AI tools and sync to Studio; ontology-job provides scheduled logical backups and command-line restore.": "ontology-builder-native 让实施顾问在自己的 AI 工具里建模并同步到 Studio；ontology-job 提供定时逻辑备份与命令行恢复。"
 });
 
 Object.assign(translations.ja, {
@@ -237,8 +234,5 @@ Object.assign(translations.ja, {
   "Openness & governance": "オープン性とガバナンス",
   "IAM/OAuth, platform RBAC, ontology and workspace permissions, open tokens, MCP and A2A, audit and token-usage views, multi-tenancy.": "IAM/OAuth、プラットフォーム RBAC、オントロジーとワークスペースの権限、オープントークン、MCP と A2A、監査とトークン使用量ビュー、マルチテナント。",
   "Local modelling & backup": "ローカルモデリングとバックアップ",
-  "ontology-builder-native lets consultants model in their own AI tools and sync to Studio; ontology-job provides scheduled logical backups and command-line restore.": "ontology-builder-native により、コンサルタントは自身の AI ツールでモデリングして Studio に同期。ontology-job は定期論理バックアップとコマンドライン復元を提供。",
-  "Ontology drives Agent Factory": "オントロジーが Agent Factory を駆動する",
-  "How the ontology becomes the foundation for rapid agent assembly — turning domain knowledge into deployable AI agents at scale.": "オントロジーがどのように迅速なエージェント組み立ての基盤となるか――ドメイン知識を大規模にデプロイ可能な AI エージェントへ変換します。",
-  "The ontology is the bridge from general intelligence to professional intelligence. Without it, a large model is a clever but ignorant outsider.": "オントロジーは、AI を汎用知能から専門知能へ導く橋です。それがなければ、LLM は賢いが無知な部外者にすぎません。"
+  "ontology-builder-native lets consultants model in their own AI tools and sync to Studio; ontology-job provides scheduled logical backups and command-line restore.": "ontology-builder-native により、コンサルタントは自身の AI ツールでモデリングして Studio に同期。ontology-job は定期論理バックアップとコマンドライン復元を提供。"
 });

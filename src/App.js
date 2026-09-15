@@ -4,6 +4,7 @@ import painSection from "./components/sections/PainSection.html?raw";
 import architectureSection from "./components/sections/ArchitectureSection.html?raw";
 import ecosystemSection from "./components/sections/EcosystemSection.html?raw";
 import ontologySection from "./components/sections/OntologySection.html?raw";
+import knowledgeFabricOntologyVideoSection from "./components/sections/KnowledgeFabricOntologyVideoSection.html?raw";
 import ontologyStudioSection from "./components/sections/OntologyStudioSection.html?raw";
 import marketplaceSection from "./components/sections/MarketplaceSection.html?raw";
 import factorySection from "./components/sections/FactorySection.html?raw";
@@ -24,6 +25,7 @@ const sections = [
   architectureSection,
   ecosystemSection,
   ontologySection,
+  knowledgeFabricOntologyVideoSection,
   ontologyStudioSection,
   marketplaceSection,
   factorySection,
