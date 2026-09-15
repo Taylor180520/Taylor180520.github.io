@@ -100,6 +100,33 @@
   .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.pill{background:var(--surface2);border-radius:22px;padding:9px 14px;font-size:13px;color:#3c4043;border:1px solid #e0e3e7}.pill.blue{background:var(--primary-soft);color:#174ea6;border-color:#d2e3fc}.pill.purple{background:var(--purple-soft);color:#5e35b1;border-color:#ded1ff}
   .scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:#80868b;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
 
+  /* Pain points: adapted from item-ai-plateform/#pain for the presentation flow. */
+  #pain.slide{min-height:calc(100vh - 68px);padding:54px 4vw 70px;align-items:center}
+  .pain-shell{width:100%;max-width:1720px;margin:0 auto}
+  .pain-head{display:block;margin-bottom:30px}
+  .pain-head h2{max-width:1280px;font-size:clamp(38px,3.8vw,60px)}
+  .pain-head .lead{max-width:1200px;margin:17px 0 0;font-size:clamp(15px,1.05vw,18px);line-height:1.55}
+  .pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .pain-card{position:relative;display:grid;grid-template-columns:56px minmax(0,1fr) 150px;grid-template-areas:"icon title stat" "icon body stat";align-content:center;gap:8px 20px;min-height:clamp(180px,20vh,230px);padding:26px 28px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.9);box-shadow:0 9px 26px rgba(60,64,67,.07)}
+  .pain-icon{grid-area:icon;display:grid;place-items:center;width:50px;height:50px;border-radius:15px;background:var(--primary-soft);color:var(--primary)}
+  .pain-icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .pain-card:nth-child(2) .pain-icon{background:var(--purple-soft);color:var(--purple)}
+  .pain-card:nth-child(3) .pain-icon{background:var(--orange-soft);color:var(--orange)}
+  .pain-card:nth-child(4) .pain-icon{background:var(--green-soft);color:var(--green)}
+  .pain-card h3{grid-area:title;align-self:end;font-size:20px;line-height:1.24;letter-spacing:-.015em}
+  .pain-card p{grid-area:body;margin:3px 0 0;color:var(--muted);font-size:14px;line-height:1.55}
+  .pain-stat{grid-area:stat;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;min-width:140px;padding-left:20px;border-left:1px solid var(--line);text-align:right}
+  .pain-stat strong{display:block;color:var(--primary);font:700 32px 'Google Sans';letter-spacing:-.04em;line-height:1}
+  .pain-card:nth-child(2) .pain-stat strong{color:var(--purple)}
+  .pain-card:nth-child(3) .pain-stat strong{color:var(--orange)}
+  .pain-card:nth-child(4) .pain-stat strong{color:var(--green)}
+  .pain-stat span{display:block;max-width:145px;margin-top:8px;color:var(--muted);font-size:11px;line-height:1.4}
+  .pain-conclusion{display:grid;grid-template-columns:170px 1fr;gap:26px;align-items:center;margin-top:18px;padding:21px 26px;border:1px solid rgba(26,115,232,.16);border-left:4px solid var(--primary);border-radius:18px;background:linear-gradient(90deg,var(--primary-soft),rgba(255,255,255,.72))}
+  .pain-conclusion strong{color:var(--primary);font:700 12px 'Google Sans';letter-spacing:.1em;text-transform:uppercase}
+  .pain-conclusion p{margin:0;color:var(--ink);font-size:14px;line-height:1.55}
+  html[data-theme="dark"] .pain-card{background:rgba(27,27,27,.92)}
+  html[data-theme="dark"] .pain-conclusion{background:linear-gradient(90deg,rgba(31,47,70,.94),rgba(27,27,27,.8));border-color:#3e5e88;border-left-color:var(--primary)}
+
 
   /* Real-demo placeholders: designed to be swapped with product screenshots, recordings, or live-demo frames. */
   .asset-placeholder{position:relative;border:1.5px dashed rgba(26,115,232,.42);background:linear-gradient(135deg,rgba(232,240,254,.72),rgba(255,255,255,.82));border-radius:28px;min-height:220px;display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -472,8 +499,8 @@
 
   @media(max-width:1120px){.position-hero{grid-template-columns:1fr;gap:46px}.minimal-hero-copy{padding-right:0}.platform-card{width:100%;max-width:780px;justify-self:center}}
   @media(max-width:1000px){.hero-grid,.feature-layout,.market-grid,.enable{grid-template-columns:1fr}.stack{grid-template-columns:1fr}.stack-item:after{display:none}.hero-visual{order:-1}.nav a:nth-child(n+4){display:none}.metrics{grid-template-columns:1fr 1fr}}
-  @media(max-width:900px){.business-story-head{grid-template-columns:1fr}.story-thesis{justify-self:start}.capability-flow{grid-template-columns:1fr 1fr}.capability-stage::after{display:none!important}.platform-proof{grid-template-columns:1fr}.proof-chain{justify-content:flex-start}}
-  @media(max-width:640px){.topbar{padding:0 16px}.topbar>div:last-child{gap:8px!important}.nav{display:none}.brand-cluster{gap:8px}.brand{font-size:15px}.language-trigger{padding:0 9px}.language-switcher-label{display:none}.language-menu{left:auto;right:0;min-width:174px;transform-origin:top right}.slide{padding-left:20px;padding-right:20px}.hero-visual{min-height:420px}.network{transform:scale(.78)}.sources,.enable-cards{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.builder-grid{grid-template-columns:1fr}.panel:nth-child(3){display:none}.market-grid{gap:22px}.hero-architecture{transform:scale(.88);transform-origin:top center;width:114%;margin-left:-7%;margin-bottom:-58px}.build-market-row{gap:7px}.build-card,.market-card{padding-left:10px;padding-right:10px}.foundation-title{font-size:10px}.foundation-name em{display:block}.foundation-items{gap:0}.foundation-items span{font-size:7px;padding-left:3px;padding-right:3px}.story-canvas{padding:16px}.task-intake{grid-template-columns:1fr}.intake-arrow{min-height:30px;transform:rotate(90deg)}.capability-flow{grid-template-columns:1fr}.frontstage-label,.backstage-head{align-items:flex-start;flex-direction:column;gap:3px}}
+  @media(max-width:900px){.business-story-head,.pain-head{grid-template-columns:1fr}.pain-head{gap:16px}.pain-head .lead{margin:0}.story-thesis{justify-self:start}.capability-flow{grid-template-columns:1fr 1fr}.capability-stage::after{display:none!important}.platform-proof{grid-template-columns:1fr}.proof-chain{justify-content:flex-start}}
+  @media(max-width:640px){.topbar{padding:0 16px}.topbar>div:last-child{gap:8px!important}.nav{display:none}.brand-cluster{gap:8px}.brand{font-size:15px}.language-trigger{padding:0 9px}.language-switcher-label{display:none}.language-menu{left:auto;right:0;min-width:174px;transform-origin:top right}.slide{padding-left:20px;padding-right:20px}.hero-visual{min-height:420px}.network{transform:scale(.78)}.sources,.enable-cards,.pain-grid{grid-template-columns:1fr}.pain-card{grid-template-columns:42px minmax(0,1fr);grid-template-areas:"icon stat" "title title" "body body";min-height:0}.pain-stat{padding-left:12px}.pain-conclusion{grid-template-columns:1fr;gap:6px}.metrics{grid-template-columns:1fr}.builder-grid{grid-template-columns:1fr}.panel:nth-child(3){display:none}.market-grid{gap:22px}.hero-architecture{transform:scale(.88);transform-origin:top center;width:114%;margin-left:-7%;margin-bottom:-58px}.build-market-row{gap:7px}.build-card,.market-card{padding-left:10px;padding-right:10px}.foundation-title{font-size:10px}.foundation-name em{display:block}.foundation-items{gap:0}.foundation-items span{font-size:7px;padding-left:3px;padding-right:3px}.story-canvas{padding:16px}.task-intake{grid-template-columns:1fr}.intake-arrow{min-height:30px;transform:rotate(90deg)}.capability-flow{grid-template-columns:1fr}.frontstage-label,.backstage-head{align-items:flex-start;flex-direction:column;gap:3px}}
   @media(max-width:1100px){.semantic-story,.factory-layout,.itemgpt-layout,.shared-context-layout{grid-template-columns:1fr}.semantic-copy h2,.semantic-copy .lead,.factory-copy h2,.factory-copy .lead,.itemgpt-copy h2,.itemgpt-copy .lead{max-width:780px}.semantic-visual,.factory-product-frame,.itemgpt-product-frame,.shared-context-visual{width:100%;max-width:920px;margin-left:auto;margin-right:auto}.itemgpt-admin-head{align-items:flex-start;flex-direction:column;gap:14px}.itemgpt-admin-head .lead{text-align:left}.execution-header{grid-template-columns:1fr}.execution-header .lead{margin-top:18px}.execution-grid{grid-template-columns:1fr}.execution-chain{min-height:430px}}
   @media(max-width:900px){.ontology-objects{grid-template-columns:repeat(3,1fr)}.context-connectors,.context-connection-label{display:none}.context-agent-grid{grid-template-columns:1fr;margin-top:20px}.context-outcome{grid-template-columns:1fr}.context-outcome .outcome-badges{grid-template-columns:1fr}}
   @media(max-width:760px){.itemgpt-admin-gallery{grid-template-columns:1fr}.itemgpt-admin-shot figcaption{align-items:flex-start;flex-direction:column;gap:2px}}
@@ -545,7 +572,7 @@
     </div>
   </div>
   <div style="display:flex;align-items:center;gap:16px"><nav class="nav">
-    <a href="#hero">Home</a><a href="#stack">Ecosystem</a><a href="#ontology">Ontology</a><a href="#marketplace">AI Marketplace</a><a href="#factory">Agent Factory</a><a href="#itemgpt">ItemGPT</a><a href="#enablement">Training</a>
+    <a href="#hero">Home</a><a href="#pain">Pain Points</a><a href="#stack">Ecosystem</a><a href="#ontology">Ontology</a><a href="#marketplace">AI Marketplace</a><a href="#factory">Agent Factory</a><a href="#itemgpt">ItemGPT</a><a href="#enablement">Training</a>
   </nav><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme"><span class="theme-icon" id="themeIcon">☀</span><span class="theme-text" id="themeText">Light</span></button></div>
 </header>
 <main>
@@ -598,6 +625,53 @@
             <div class="foundation-items"><span>Authentication</span><span>Authorization &amp; Entitlement</span><span>API Key Management</span><span>Usage Quotas &amp; Rate Limits</span><span>Audit &amp; Monitoring</span></div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide inner" id="pain">
+    <div class="pain-shell">
+      <div class="pain-head">
+        <div>
+          <div class="eyebrow">01 · Pain Points</div>
+          <h2>What blocks enterprise AI was never the model.</h2>
+        </div>
+        <p class="lead">Nearly every company has run an AI pilot in the last two years; very few made it into production. We hit the same walls in our own warehouses, transportation and customer service—the problems sit in four places: knowledge, semantics, execution and reuse.</p>
+      </div>
+
+      <div class="pain-grid">
+        <article class="pain-card">
+          <span class="pain-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 8h8M8 12h5M8 16h4"></path><path d="M16 14v4m-2-2h4"></path></svg></span>
+          <h3>Knowledge is locked in people’s heads and document piles</h3>
+          <p>SOPs live in slide decks, chat groups and veterans’ experience. Feed a large model enough material and it only looks like it has read it—answers can’t be traced to a source, and nobody dares sign off on production.</p>
+          <div class="pain-stat"><strong>70%</strong><span>of business knowledge is never structured</span></div>
+        </article>
+
+        <article class="pain-card">
+          <span class="pain-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.5 3.7 5.5 3.7 9S14.4 18.5 12 21M12 3C9.6 5.5 8.3 8.5 8.3 12s1.3 6.5 3.7 9"></path></svg></span>
+          <h3>General models don’t know the industry’s tacit knowledge</h3>
+          <p>“Dock”, “wave”, “LFD” and “hold” mean different things to different customers. Without a business ontology an Agent can’t be accurate, consistent or explainable in an enterprise setting.</p>
+          <div class="pain-stat"><strong>0</strong><span>general models understand your SOPs out of the box</span></div>
+        </article>
+
+        <article class="pain-card">
+          <span class="pain-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3v5M16 3v5M6 8h12v4a6 6 0 0 1-12 0V8Z"></path><path d="M12 18v3M8 21h8"></path></svg></span>
+          <h3>A chasm between POC and production</h3>
+          <p>A smooth demo conversation meets permissions, approvals, idempotency, retries after disconnects, audit and cost metering in production. Without execution infrastructure, Agents stay toys.</p>
+          <div class="pain-stat"><strong>&lt; 10%</strong><span>of AI pilots reach production systems</span></div>
+        </article>
+
+        <article class="pain-card">
+          <span class="pain-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 7h-5V2"></path><path d="M19 7a8 8 0 0 0-13.8-1.8L3 8"></path><path d="M4 17h5v5"></path><path d="M5 17a8 8 0 0 0 13.8 1.8L21 16"></path></svg></span>
+          <h3>One-off delivery that can’t be reused or metered</h3>
+          <p>Every project writes prompts from scratch, integrates systems from scratch and builds governance from scratch. Capabilities have no versions, no evaluation, no distribution—ten projects cost ten times.</p>
+          <div class="pain-stat"><strong>10×</strong><span>repeated implementation cost</span></div>
+        </article>
+      </div>
+
+      <div class="pain-conclusion">
+        <strong>Our view</strong>
+        <p>The long-term assets of enterprise AI are the company’s own knowledge, ontologies, business skills, run records and improvement experience; the underlying model is a replaceable execution resource. The real moat is turning one-off implementation into capabilities that are reusable, configurable, distributable and meterable.</p>
       </div>
     </div>
   </section>
@@ -1082,7 +1156,12 @@
   };
   const translations={
     zh:{
-      'Language':'语言','Home':'首页','Ecosystem':'生态系统','Ontology':'本体','Training':'培训',
+      'Language':'语言','Home':'首页','Pain Points':'行业痛点','Ecosystem':'生态系统','Ontology':'本体','Training':'培训',
+      '01 · Pain Points':'01 · 行业痛点','What blocks enterprise AI was never the model.':'企业做 AI，卡在的从来不是模型。','Nearly every company has run an AI pilot in the last two years; very few made it into production. We hit the same walls in our own warehouses, transportation and customer service—the problems sit in four places: knowledge, semantics, execution and reuse.':'过去两年几乎每家企业都做了 AI 试点，真正进入生产的却寥寥无几。我们在自己的仓库、运输和客服业务里踩过同样的坑——问题出在知识、语义、执行和复用四个环节。',
+      'Knowledge is locked in people’s heads and document piles':'知识锁在人脑和文档堆里','SOPs live in slide decks, chat groups and veterans’ experience. Feed a large model enough material and it only looks like it has read it—answers can’t be traced to a source, and nobody dares sign off on production.':'SOP 散落在 PPT、微信群和老员工的经验里；资料一多，大模型只会「看起来读过」，答案无法追溯来源，也没人敢批准它上线。','of business knowledge is never structured':'的业务知识没有被结构化沉淀',
+      'General models don’t know the industry’s tacit knowledge':'通用大模型不懂行业暗知识','“Dock”, “wave”, “LFD” and “hold” mean different things to different customers. Without a business ontology an Agent can’t be accurate, consistent or explainable in an enterprise setting.':'「月台」「波次」「LFD」「Hold」在不同客户眼里意义不同。没有业务本体，Agent 无法在企业级场景中做到准确、一致、可解释。','general models understand your SOPs out of the box':'个通用模型天然理解你的 SOP',
+      'A chasm between POC and production':'从 POC 到生产之间隔着一道鸿沟','A smooth demo conversation meets permissions, approvals, idempotency, retries after disconnects, audit and cost metering in production. Without execution infrastructure, Agents stay toys.':'演示里一段顺畅的对话，在生产里要面对权限、审批、幂等、失联重试、审计和成本计量。没有执行基础设施，Agent 永远停在「玩具」阶段。','of AI pilots reach production systems':'的 AI 试点能进入生产系统',
+      'One-off delivery that can’t be reused or metered':'一次性实施，无法复用和计量','Every project writes prompts from scratch, integrates systems from scratch and builds governance from scratch. Capabilities have no versions, no evaluation, no distribution—ten projects cost ten times.':'每个项目从零写提示词、从零接系统、从零做治理。能力没有版本、没有评测、没有分发，做十次就是十次成本。','repeated implementation cost':'重复的实施成本','Our view':'我们的判断','The long-term assets of enterprise AI are the company’s own knowledge, ontologies, business skills, run records and improvement experience; the underlying model is a replaceable execution resource. The real moat is turning one-off implementation into capabilities that are reusable, configurable, distributable and meterable.':'企业 AI 的长期资产是企业自己的知识、本体、业务技能、运行记录和改进经验；底层模型只是可替换的执行资源。真正的护城河，是把「一次性业务实施」变成「可复用、可配置、可分发、可计量」的企业能力。',
       'One shared foundation for':'一个共享底座，支撑','Connect enterprise knowledge, capabilities and agent building in one governed platform — so Lenovo teams can build, reuse and continuously operate AI agents.':'在一个统一治理的平台中连接企业知识、能力与 Agent 构建，让 Lenovo 团队能够构建、复用并持续运营 AI Agent。',
       'Lenovo Enterprise AI Platform':'Lenovo 企业 AI 平台','Shared operating system':'共享运营系统','One task in · governed capabilities out':'一个任务入口 · 治理能力输出','One task entry · planning and orchestration':'统一任务入口 · 规划与编排',
       'Specialized Agents Collaboration':'专业 Agent 协作','Dynamic, task-based teamwork':'基于任务的动态协作','Specialized Agent 01':'专业 Agent 01','Specialized Agent 02':'专业 Agent 02','Specialized Agent 03':'专业 Agent 03','Domain expertise · scenario capability':'领域专长 · 场景能力',
@@ -1103,7 +1182,12 @@
       'MODULE 04 · ITEMGPT':'模块 04 · ITEMGPT','A unified entry point for business users':'业务用户的统一入口','Start business tasks in natural language, understand Agent execution and confirm critical results with human judgment.':'使用自然语言发起业务任务，理解 Agent 执行过程，并通过人工判断确认关键结果。','Navigate workspaces, conversations, the Agent catalog and common actions':'熟悉工作区、对话、Agent 目录和常用操作','Express business goals, context, constraints and expected results clearly':'清晰表达业务目标、上下文、约束和预期结果','Select the right Agent and understand multi-Agent collaboration':'选择合适的 Agent 并理解多 Agent 协作','Inspect sources, tool calls, execution status and exception messages':'检查信息来源、工具调用、执行状态和异常消息','Apply human confirmation to high-risk actions and critical results':'对高风险操作和关键结果进行人工确认','Save, share and export results while submitting actionable feedback':'保存、共享和导出结果，并提交可执行的反馈','Agent Factory Training Videos':'Agent Factory 培训视频','Marketplace Training Videos':'Marketplace 培训视频','View complete training solution (PDF)':'查看完整培训方案（PDF）'
     },
     ja:{
-      'Language':'言語','Home':'ホーム','Ecosystem':'エコシステム','Ontology':'オントロジー','Training':'トレーニング',
+      'Language':'言語','Home':'ホーム','Pain Points':'業界の課題','Ecosystem':'エコシステム','Ontology':'オントロジー','Training':'トレーニング',
+      '01 · Pain Points':'01 · 業界の課題','What blocks enterprise AI was never the model.':'企業の AI が止まる原因は、モデルではない。','Nearly every company has run an AI pilot in the last two years; very few made it into production. We hit the same walls in our own warehouses, transportation and customer service—the problems sit in four places: knowledge, semantics, execution and reuse.':'この 2 年でほぼすべての企業が AI の PoC を行いましたが、本番に到達したものはごくわずかです。私たち自身も倉庫・輸送・カスタマーサービスで同じ壁にぶつかりました。問題は「知識」「セマンティクス」「実行」「再利用」の 4 つにあります。',
+      'Knowledge is locked in people’s heads and document piles':'知識が人の頭と書類の山に閉じ込められている','SOPs live in slide decks, chat groups and veterans’ experience. Feed a large model enough material and it only looks like it has read it—answers can’t be traced to a source, and nobody dares sign off on production.':'SOP はスライド、チャットグループ、ベテランの経験に散らばっています。資料が増えるほど LLM は「読んだふり」をし、回答の出典を辿れず、誰も本番投入を承認できません。','of business knowledge is never structured':'の業務知識が構造化されていない',
+      'General models don’t know the industry’s tacit knowledge':'汎用 LLM は業界の暗黙知を知らない','“Dock”, “wave”, “LFD” and “hold” mean different things to different customers. Without a business ontology an Agent can’t be accurate, consistent or explainable in an enterprise setting.':'「ドック」「ウェーブ」「LFD」「Hold」の意味は顧客ごとに異なります。業務オントロジーがなければ、Agent はエンタープライズの現場で正確・一貫・説明可能にはなれません。','general models understand your SOPs out of the box':'個の汎用モデルがあなたの SOP を最初から理解している',
+      'A chasm between POC and production':'PoC と本番の間に横たわる溝','A smooth demo conversation meets permissions, approvals, idempotency, retries after disconnects, audit and cost metering in production. Without execution infrastructure, Agents stay toys.':'デモの滑らかな会話は、本番では権限、承認、冪等性、切断時の再試行、監査、コスト計測に直面します。実行基盤がなければ、Agent は「おもちゃ」のままです。','of AI pilots reach production systems':'の AI PoC が本番システムに到達',
+      'One-off delivery that can’t be reused or metered':'一回限りの導入で、再利用も計測もできない','Every project writes prompts from scratch, integrates systems from scratch and builds governance from scratch. Capabilities have no versions, no evaluation, no distribution—ten projects cost ten times.':'案件ごとにプロンプトをゼロから書き、システムをゼロから接続し、ガバナンスをゼロから作る。能力にバージョンも評価も配布もなく、10 回やれば 10 回分のコストがかかります。','repeated implementation cost':'繰り返される導入コスト','Our view':'私たちの見解','The long-term assets of enterprise AI are the company’s own knowledge, ontologies, business skills, run records and improvement experience; the underlying model is a replaceable execution resource. The real moat is turning one-off implementation into capabilities that are reusable, configurable, distributable and meterable.':'エンタープライズ AI の長期的な資産は、企業自身の知識、オントロジー、業務スキル、実行記録、改善の経験です。基盤モデルは交換可能な実行リソースにすぎません。真の堀は、「一回限りの業務導入」を「再利用・設定・配布・計測が可能な企業能力」に変えることです。',
       'One shared foundation for':'共通基盤が支える','Connect enterprise knowledge, capabilities and agent building in one governed platform — so Lenovo teams can build, reuse and continuously operate AI agents.':'企業の知識、ケイパビリティ、Agent 構築を一つの統制されたプラットフォームでつなぎ、Lenovo のチームが AI Agent を構築・再利用・継続運用できるようにします。',
       'Lenovo Enterprise AI Platform':'Lenovo エンタープライズ AI プラットフォーム','Shared operating system':'共通オペレーティングシステム','One task in · governed capabilities out':'一つのタスク入力 · 統制されたケイパビリティ出力','One task entry · planning and orchestration':'単一のタスク入口 · 計画とオーケストレーション',
       'Specialized Agents Collaboration':'専門 Agent の連携','Dynamic, task-based teamwork':'タスクに応じた動的な連携','Specialized Agent 01':'専門 Agent 01','Specialized Agent 02':'専門 Agent 02','Specialized Agent 03':'専門 Agent 03','Domain expertise · scenario capability':'ドメイン知識 · シナリオ対応力',
