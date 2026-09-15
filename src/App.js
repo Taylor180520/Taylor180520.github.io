@@ -1,6 +1,7 @@
 import siteHeader from "./components/SiteHeader.html?raw";
 import heroSection from "./components/sections/HeroSection.html?raw";
 import painSection from "./components/sections/PainSection.html?raw";
+import architectureSection from "./components/sections/ArchitectureSection.html?raw";
 import ecosystemSection from "./components/sections/EcosystemSection.html?raw";
 import ontologySection from "./components/sections/OntologySection.html?raw";
 import sharedContextSection from "./components/sections/SharedContextSection.html?raw";
@@ -17,6 +18,7 @@ import operationsTrainingSection from "./components/sections/OperationsTrainingS
 const sections = [
   heroSection,
   painSection,
+  architectureSection,
   ecosystemSection,
   ontologySection,
   sharedContextSection,

@@ -101,6 +101,45 @@ export function initializePresentation(){
     syncThemeUI();
   });
 
+  const architectureTabs=[...document.querySelectorAll('.architecture-tab')];
+  const architecturePanels=[...document.querySelectorAll('.architecture-panel')];
+  const openArchitectureTab=(tabName)=>{
+    architectureTabs.forEach(tab=>{
+      const selected=tab.dataset.architectureTab===tabName;
+      tab.classList.toggle('is-active',selected);
+      tab.setAttribute('aria-selected',String(selected));
+      tab.tabIndex=selected?0:-1;
+    });
+    architecturePanels.forEach(panel=>{
+      const selected=panel.dataset.architecturePanel===tabName;
+      panel.classList.toggle('is-active',selected);
+      panel.hidden=!selected;
+    });
+  };
+  architectureTabs.forEach((tab,index)=>{
+    tab.addEventListener('click',()=>openArchitectureTab(tab.dataset.architectureTab));
+    tab.addEventListener('keydown',event=>{
+      if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      const next=event.key==='Home'?0:event.key==='End'?architectureTabs.length-1:(index+(event.key==='ArrowRight'?1:-1)+architectureTabs.length)%architectureTabs.length;
+      architectureTabs[next].focus();
+      openArchitectureTab(architectureTabs[next].dataset.architectureTab);
+    });
+  });
+  const architectureVideo=document.querySelector('.architecture-video');
+  architectureVideo?.addEventListener('click',()=>{
+    const videoId=architectureVideo.dataset.youtubeId;
+    if(!videoId) return;
+    const title=architectureVideo.querySelector('strong')?.textContent||'Multi-agent collaboration in action';
+    const frame=document.createElement('iframe');
+    frame.className='architecture-video';
+    frame.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(videoId)+'?autoplay=1&rel=0&modestbranding=1';
+    frame.title=title;
+    frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    frame.allowFullscreen=true;
+    architectureVideo.replaceWith(frame);
+  });
+
   const trainingTabs=[...document.querySelectorAll('.training-module-card')];
   const trainingPanels=[...document.querySelectorAll('.training-module-panel')];
   const openTrainingModule=(module)=>{

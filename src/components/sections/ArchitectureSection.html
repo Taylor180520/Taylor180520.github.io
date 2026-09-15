@@ -1,0 +1,64 @@
+<section class="slide inner architecture-slide" id="architecture">
+  <div class="architecture-shell">
+    <header class="architecture-head">
+      <div class="eyebrow">00 · Architecture</div>
+      <h2>One multi-agent architecture shared by six products</h2>
+      <p class="lead">We don't hide intelligence inside a single prompt. Understanding the business and producing side effects on real systems are governed separately: the semantics &amp; knowledge layer understands, the capability layer produces, the execution layer acts safely, and the entry layer puts it in people's hands.</p>
+    </header>
+
+    <div class="architecture-layer-card" aria-label="Architecture layers">
+      <div class="architecture-layer-row">
+        <div class="architecture-layer-name"><span>L4</span><strong>Entry layer</strong></div>
+        <ul><li>ITEMGPT conversational workspace</li><li>Personal Assistant work hub</li><li>Teams / Slack / WeCom / WhatsApp and other channels</li><li>Embedded chat and custom pages</li></ul>
+      </div>
+      <div class="architecture-layer-row">
+        <div class="architecture-layer-name"><span>L3</span><strong>Capability production layer</strong></div>
+        <ul><li>Agent Factory · Steward conversational modelling</li><li>Agent IDE · generates AGENTS.md / SKILL.md / team.json</li><li>Skill Factory · evaluation and publishing</li><li>Marketplace · discovery, subscription, metering</li></ul>
+      </div>
+      <div class="architecture-layer-row semantics">
+        <div class="architecture-layer-name"><span>L2</span><strong>Semantics &amp; knowledge layer</strong></div>
+        <ul><li>Ontology Studio · ontologies and graphs</li><li>Ontology Runtime · data binding and actions</li><li>Knowledge Fabric · knowledge production and review</li><li>Dataset Sources · versioned data</li></ul>
+      </div>
+      <div class="architecture-layer-row">
+        <div class="architecture-layer-name"><span>L1</span><strong>Execution infrastructure</strong></div>
+        <ul><li>Agent Runtime · durable execution on Temporal</li><li>Connector · credentials, triggers, message channels</li><li>Model gateway · routing, quotas, cost attribution</li><li>Tool gateway · OpenAPI → AI tools</li><li>VFS · memory, skills, session files</li></ul>
+      </div>
+    </div>
+
+    <div class="architecture-protocols">
+      <div class="architecture-tab-list" role="tablist" aria-label="Architecture protocols">
+        <button class="architecture-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="architecture-panel-multi-agent" data-architecture-tab="multi-agent">Multi-agent collaboration</button>
+        <button class="architecture-tab" type="button" role="tab" aria-selected="false" aria-controls="architecture-panel-mcp" data-architecture-tab="mcp" tabindex="-1">MCP</button>
+        <button class="architecture-tab" type="button" role="tab" aria-selected="false" aria-controls="architecture-panel-a2a" data-architecture-tab="a2a" tabindex="-1">A2A</button>
+        <button class="architecture-tab" type="button" role="tab" aria-selected="false" aria-controls="architecture-panel-gateway" data-architecture-tab="gateway" tabindex="-1">Gateways &amp; connections</button>
+      </div>
+
+      <article class="architecture-panel is-active" id="architecture-panel-multi-agent" role="tabpanel" data-architecture-panel="multi-agent">
+        <div><h3>Agent Team: dispatcher + executors + reviewer</h3><p>Complex tasks are completed by an Agent Team: the lead agent decomposes the goal, sub-agents own their parts, and Steward manages the whole lifecycle conversationally. Teams have input definitions, environment and connector configuration, sharing and permission grants, and step-level traceable run records.</p></div>
+        <ul><li>Lead / sub-agent division of labour and escalation</li><li>Shared memory, sessions and artifacts</li><li>Human in the loop: one-off approval · session approval · remembered grants · reject · timeout</li><li>Task diagnostics and failure attribution</li></ul>
+      </article>
+      <article class="architecture-panel" id="architecture-panel-mcp" role="tabpanel" data-architecture-panel="mcp" hidden>
+        <div><h3>MCP: enterprise systems become tools agents can discover and call</h3><p>Ontology, Knowledge Fabric, Connector and the tool gateway all expose capabilities over MCP: agents discover tools, read business context and execute controlled actions through a standard interface. OAuth, health checks and a tool registry keep every connection manageable and auditable.</p></div>
+        <ul><li>Ontology / knowledge base queries over MCP</li><li>OpenAPI / Swagger converted into AI tools in one step</li><li>MCP OAuth · least-privilege tokens · regular rotation</li><li>Built-in / public / private MCP connections</li></ul>
+      </article>
+      <article class="architecture-panel" id="architecture-panel-a2a" role="tabpanel" data-architecture-panel="a2a" hidden>
+        <div><h3>A2A: standard collaboration between agents</h3><p>Agent Factory offers A2A and OpenAI-compatible endpoints; ITEMGPT and PA can discover and delegate to external expert agents; Knowledge Fabric can be queried by external agents over A2A. Cross-product, cross-tenant and cross-vendor agent collaboration runs on one protocol.</p></div>
+        <ul><li>Agent discovery, delegation and callbacks</li><li>OpenAI-compatible API · drops into existing apps</li><li>Idempotent requests, session reuse, access audit</li><li>External grants and API key management</li></ul>
+      </article>
+      <article class="architecture-panel" id="architecture-panel-gateway" role="tabpanel" data-architecture-panel="gateway" hidden>
+        <div><h3>Model gateway · Tool gateway · Connector · VFS</h3><p>The model gateway unifies providers and protocols, attributes usage and cost by app / tenant / user / agent, and enforces quotas and failover. Connector centrally manages external system connections, credentials (AES-256-GCM with tenant-derived keys), triggers and message channels. VFS gives agents a cloud file system with memory projections.</p></div>
+        <ul><li>Hybrid routing: leading US models + Chinese open-source / on-prem models</li><li>Connectors for Bitbucket · Confluence · Jira · SharePoint · Figma · 3CX · MySQL · PostgreSQL and more</li><li>Channel adapters for Teams · Slack · Telegram · Feishu · DingTalk · WeCom</li><li>S3 / PostgreSQL / Redis three-tier storage · L0/L1/L2 summary retrieval</li></ul>
+      </article>
+    </div>
+
+    <div class="architecture-video-row">
+      <div><h3>Multi-agent collaboration in action</h3><p>Several specialised AI agents working together — from task planning and route optimisation to real-time execution — closing the loop from decision to action.</p></div>
+      <button class="architecture-video" type="button" data-youtube-id="NmYgyat35Rk" aria-label="Watch: Multi-agent collaboration in action">
+        <img src="https://i.ytimg.com/vi/NmYgyat35Rk/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="architecture-video-shade"></span>
+        <span class="architecture-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"></path></svg></span>
+        <strong>Multi-agent collaboration in action</strong>
+      </button>
+    </div>
+  </div>
+</section>
