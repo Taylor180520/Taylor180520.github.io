@@ -7,6 +7,7 @@ import ontologySection from "./components/sections/OntologySection.html?raw";
 import sharedContextSection from "./components/sections/SharedContextSection.html?raw";
 import marketplaceSection from "./components/sections/MarketplaceSection.html?raw";
 import factorySection from "./components/sections/FactorySection.html?raw";
+import agentFactoryVideoSection from "./components/sections/AgentFactoryVideoSection.html?raw";
 import itemGptSection from "./components/sections/ItemGptSection.html?raw";
 import wmsShipOrderVideoSection from "./components/sections/WmsShipOrderVideoSection.html?raw";
 import fmsTicketResponseVideoSection from "./components/sections/FmsTicketResponseVideoSection.html?raw";
@@ -26,6 +27,7 @@ const sections = [
   sharedContextSection,
   marketplaceSection,
   factorySection,
+  agentFactoryVideoSection,
   itemGptSection,
   wmsShipOrderVideoSection,
   fmsTicketResponseVideoSection,
