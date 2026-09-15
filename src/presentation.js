@@ -140,6 +140,58 @@ export function initializePresentation(){
     architectureVideo.replaceWith(frame);
   });
 
+  const ontologyTabs=[...document.querySelectorAll('.ontology-gallery-tab')];
+  const ontologyPanels=[...document.querySelectorAll('.ontology-gallery-panel')];
+  const openOntologyShot=(shotName)=>{
+    ontologyTabs.forEach(tab=>{
+      const selected=tab.dataset.ontologyShot===shotName;
+      tab.classList.toggle('is-active',selected);
+      tab.setAttribute('aria-selected',String(selected));
+      tab.tabIndex=selected?0:-1;
+    });
+    ontologyPanels.forEach(panel=>{
+      const selected=panel.dataset.ontologyPanel===shotName;
+      panel.classList.toggle('is-active',selected);
+      panel.hidden=!selected;
+    });
+  };
+  ontologyTabs.forEach((tab,index)=>{
+    tab.addEventListener('click',()=>openOntologyShot(tab.dataset.ontologyShot));
+    tab.addEventListener('keydown',event=>{
+      if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      const next=event.key==='Home'?0:event.key==='End'?ontologyTabs.length-1:(index+(event.key==='ArrowRight'?1:-1)+ontologyTabs.length)%ontologyTabs.length;
+      ontologyTabs[next].focus();
+      openOntologyShot(ontologyTabs[next].dataset.ontologyShot);
+    });
+  });
+  const ontologyLightbox=document.querySelector('.ontology-lightbox');
+  const ontologyLightboxImage=ontologyLightbox?.querySelector('img');
+  ontologyPanels.forEach(panel=>panel.addEventListener('click',()=>{
+    const source=panel.querySelector('img');
+    if(!source||!ontologyLightbox||!ontologyLightboxImage) return;
+    ontologyLightboxImage.src=source.currentSrc||source.src;
+    ontologyLightboxImage.alt=source.alt;
+    ontologyLightbox.showModal();
+  }));
+  ontologyLightbox?.querySelector('.ontology-lightbox-close')?.addEventListener('click',()=>ontologyLightbox.close());
+  ontologyLightbox?.addEventListener('click',event=>{
+    if(event.target===ontologyLightbox) ontologyLightbox.close();
+  });
+  const ontologyVideo=document.querySelector('.ontology-video');
+  ontologyVideo?.addEventListener('click',()=>{
+    const videoId=ontologyVideo.dataset.youtubeId;
+    if(!videoId) return;
+    const title=ontologyVideo.querySelector('strong')?.textContent||'Ontology drives Agent Factory';
+    const frame=document.createElement('iframe');
+    frame.className='ontology-video';
+    frame.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(videoId)+'?autoplay=1&rel=0&modestbranding=1';
+    frame.title=title;
+    frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    frame.allowFullscreen=true;
+    ontologyVideo.replaceWith(frame);
+  });
+
   const trainingTabs=[...document.querySelectorAll('.training-module-card')];
   const trainingPanels=[...document.querySelectorAll('.training-module-panel')];
   const openTrainingModule=(module)=>{
