@@ -18,6 +18,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(import.meta.dirname, "index.html"),
+        compatibility: path.resolve(
+          import.meta.dirname,
+          "ITEM_Presentation/index.html",
+        ),
       },
     },
   },

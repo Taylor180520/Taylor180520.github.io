@@ -26,6 +26,10 @@ npm run dev
 Open <http://localhost:3000/>. The presentation is served exclusively through
 `index.html`.
 
+For compatibility with the former project-site URL, the same application is
+also built at `/ITEM_Presentation/index.html`; both entries share all source
+components, styles and behavior.
+
 ## Deployment
 
 Every push to `main` builds the Vite application and deploys `dist/` to GitHub
